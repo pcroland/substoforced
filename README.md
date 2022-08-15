@@ -3,8 +3,9 @@ Extracting forced subtitles from a full subtitle with a set of timecodes
 
 # Installation
 ```sh
-https://github.com/pcroland/substoforced
-pip install -r requirements
+git clone https://github.com/pcroland/substoforced
+cd substoforced
+pip install -r requirements.txt
 ```
 
 # Usage
