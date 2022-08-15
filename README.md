@@ -21,3 +21,14 @@ FLAGS:
   -f, --folder FOLDER         specifies a folder where SubsMask2Img generated timecodes (optional)
                               you should remove the junk from there manually
 ```
+
+# Generating hardsub timecodes
+Example:
+```c++
+FFMS2("X:\path\to\video.mkv")
+InpaintDelogo(Loc="300,830,-300,-80", oPP=0, Show=4, DynMask=4, DynTune=210, DynMask4H=120)
+SubsMask2Img(ImgInflate=1, ImgDir="X:\path\to\folder")
+```
+- `Loc` defines where hardsubs should be, you can set it up with `Crop()`
+- `ImgDir` is where hardsub timecodes will be saved
+- InpaintDelogo picks up signs with text from the video and credits text so remove those manually
