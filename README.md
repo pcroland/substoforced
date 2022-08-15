@@ -23,7 +23,7 @@ FLAGS:
                               you should remove the junk from there manually
 ```
 
-# Generating hardsub timecodes
+# Generating hardsub timecodes with AviSynth
 Example:
 ```c++
 FFMS2("X:\path\to\video.mkv")
