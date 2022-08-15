@@ -32,3 +32,4 @@ SubsMask2Img(ImgInflate=1, ImgDir="X:\path\to\folder")
 - `Loc` defines where hardsubs should be, you can set it up with `Crop()`
 - `ImgDir` is where hardsub timecodes will be saved
 - InpaintDelogo picks up signs with text from the video and credits text so remove those manually
+- run `.avs` script with [`AVSMeter`](https://forum.doom9.org/showthread.php?t=174797)
