@@ -27,7 +27,7 @@ FLAGS:
 Example:
 ```c++
 FFMS2("X:\path\to\video.mkv")
-InpaintDelogo(Loc="300,830,-300,-80", oPP=0, Show=4, DynMask=4, DynTune=210, DynMask4H=120)
+InpaintDelogo(Loc="300,830,-300,-80", Show=4, DynMask=4, DynTune=210, DynMask4H=120)
 SubsMask2Img(ImgInflate=1, ImgDir="X:\path\to\folder")
 ```
 - `Loc` defines where hardsubs should be, you can set it up with `Crop()`
