@@ -24,7 +24,13 @@ FLAGS:
 ```
 
 # Generating hardsub timecodes with AviSynth
-Example:
+### Requirements
+- AviSynth+
+- [InpaintDelogo](https://github.com/Purfview/InpaintDelogo)
+
+I recommend to use this plugin pack: [Avisynth+ plugins pack](https://gitlab.com/uvz/AviSynthPlus-Plugins-Scripts)
+
+### Example
 ```c++
 FFMS2("X:\path\to\video.mkv")
 InpaintDelogo(Loc="300,830,-300,-80", Show=4, DynMask=4, DynTune=210, DynMask4H=120)
