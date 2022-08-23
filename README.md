@@ -11,16 +11,16 @@ pip install -r requirements.txt
 # Usage
 ```
 ❯ ./stf.py -h
-substoforced 1.0.0
+substoforced 1.0.1
 
-USAGE: stf.py [-h] [-v] [-s SUB] [-f FOLDER]
+USAGE: stf.py [-h] [-v] [-s SUB] [-f DIR]
 
 FLAGS:
-  -h, --help                  show this help message.
-  -v, --version               show version.
-  -s, --sub SUB               specifies srt input
-  -f, --folder FOLDER         specifies a folder where SubsMask2Img generated timecodes (optional)
-                              you should remove the junk from there manually
+  -h, --help        show this help message.
+  -v, --version     show version.
+  -s, --sub SUB     specifies srt input
+  -f, --folder DIR  specifies a folder where SubsMask2Img generated timecodes (optional)
+                    you should remove the junk from there manually
 ```
 
 # Generating hardsub timecodes with AviSynth

@@ -10,7 +10,7 @@ import pysrt
 from rich import print
 
 prog_name = 'substoforced'
-prog_version = '1.0.0'
+prog_version = '1.0.1'
 
 
 class RParse(argparse.ArgumentParser):
@@ -28,18 +28,17 @@ class RParse(argparse.ArgumentParser):
 
 
 class CustomHelpFormatter(argparse.RawTextHelpFormatter):
-    def _format_action(self, action):
-        old = super()._format_action(action)
-        metavar = ''
-        m = re.search(r'--?[\w-]+ ([A-Z. \[\]]+)', old)
-        if m:
-            metavar = m.group(1)
-        return re.sub(r'(-[\w-]+) ([A-Z. \[\]]+), (--[\w-]+) \2', fr'\1, \3 \2{" " * (len(metavar) + 1)}', old)
+    def _format_action_invocation(self, action):
+        if not action.option_strings or action.nargs == 0:
+            return super()._format_action_invocation(action)
+        default = self._get_default_metavar_for_optional(action)
+        args_string = self._format_args(action, default)
+        return ', '.join(action.option_strings) + ' ' + args_string
 
 
 parser = RParse(
     add_help=False,
-    formatter_class=lambda prog: CustomHelpFormatter(prog, width=80, max_help_position=30)
+    formatter_class=lambda prog: CustomHelpFormatter(prog)
 )
 parser.add_argument('-h', '--help',
                     action='help',
@@ -53,6 +52,7 @@ parser.add_argument('-s', '--sub',
                     default=argparse.SUPPRESS,
                     help='specifies srt input')
 parser.add_argument('-f', '--folder',
+                    metavar='DIR',
                     default=None,
                     help='specifies a folder where [bold color(231)]SubsMask2Img[/bold color(231)] generated timecodes (optional)\nyou should remove the junk from there manually')
 args = parser.parse_args()
